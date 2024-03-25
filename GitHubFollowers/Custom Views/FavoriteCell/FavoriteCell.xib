@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="KGk-i7-Jjw" customClass="FavoriteCell" customModule="GitHubFollowers" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="315" height="73"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="315" height="73"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T46-lQ-GXE" customClass="GFAvatarImageView" customModule="GitHubFollowers" customModuleProvider="target">
+                        <rect key="frame" x="16" y="4" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64" id="8Td-DA-LTl"/>
+                            <constraint firstAttribute="width" secondItem="T46-lQ-GXE" secondAttribute="height" id="pBe-cy-Tba"/>
+                            <constraint firstAttribute="height" constant="64" id="yUd-Fl-yW5"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLy-NX-NFI" customClass="GFTitleLabel" customModule="GitHubFollowers" customModuleProvider="target">
+                        <rect key="frame" x="96" y="24" width="215" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="T46-lQ-GXE" secondAttribute="bottom" constant="4" id="2xv-JI-gFO"/>
+                    <constraint firstItem="DLy-NX-NFI" firstAttribute="leading" secondItem="T46-lQ-GXE" secondAttribute="trailing" constant="16" id="FcG-10-gfn"/>
+                    <constraint firstItem="T46-lQ-GXE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="FnN-KP-sZr"/>
+                    <constraint firstItem="DLy-NX-NFI" firstAttribute="centerY" secondItem="T46-lQ-GXE" secondAttribute="centerY" id="KVh-BU-g1e"/>
+                    <constraint firstItem="DLy-NX-NFI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="W45-wx-jed"/>
+                    <constraint firstAttribute="trailing" secondItem="DLy-NX-NFI" secondAttribute="trailing" constant="4" id="XLy-ti-cIA"/>
+                    <constraint firstItem="T46-lQ-GXE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="yXd-Fm-gLk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="avatarImageView" destination="T46-lQ-GXE" id="Lbf-8L-iKU"/>
+                <outlet property="usernameLabel" destination="DLy-NX-NFI" id="6ah-Fd-pxY"/>
+            </connections>
+            <point key="canvasLocation" x="171.75572519083968" y="25.704225352112676"/>
+        </tableViewCell>
+    </objects>
+</document>
