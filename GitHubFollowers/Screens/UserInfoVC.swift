@@ -11,7 +11,7 @@ enum ItemInfoType {
     case repos, gists, followers, following
 }
 
-final class UserInfoVC: UIViewController {
+final class UserInfoVC: GFDataLoadingVC {
     
     @IBOutlet var avatarImageView: GFAvatarImageView!
     @IBOutlet var usernameLabel: GFTitleLabel!
@@ -53,21 +53,31 @@ final class UserInfoVC: UIViewController {
     
     @objc func dismissVC() {
         dismiss(animated: true)
+        
     }
     
     func configureUIElements() {
-        avatarImageView.downloadImage(from: user.avatarUrl)
+        downloadAvatarImage()
         usernameLabel.text = user.login
         nameLabel.text = user.name ?? ""
         locationLabel.text = user.location ?? "No Location"
         bioLabel.text = user.bio ?? "No bio available"
-        dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
+        dateLabel.text = "GitHub since \(user.createdAt.convertToMonthYearFormat())"
         
         
         set(itemInfoType: .followers, withCount: user.followers)
         set(itemInfoType: .following, withCount: user.following)
         set(itemInfoType: .gists, withCount: user.publicGists)
         set(itemInfoType: .repos, withCount: user.publicRepos)
+    }
+    
+    func downloadAvatarImage() {
+        NetworkManager.shared.downloadImage(from: user.avatarUrl) { [weak self] image in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.avatarImageView.image = image
+            }
+        }
     }
     
     func set(itemInfoType: ItemInfoType, withCount count: Int) {

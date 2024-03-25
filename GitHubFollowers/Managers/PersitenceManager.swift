@@ -44,7 +44,7 @@ enum PersitenceManager {
             return .unableToFavorite
         }
     }
-        
+    
     static func updateWith(favorite: Follower, actionType: PersitenceActionType, completion: @escaping(GFError?) -> Void) {
         retrieveFavorites { result in
             switch result {

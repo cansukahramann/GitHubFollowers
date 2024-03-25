@@ -12,7 +12,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="KGk-i7-Jjw" customClass="FavoriteCell" customModule="GitHubFollowers" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="315" height="73"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="315" height="73"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -30,11 +30,23 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ABU-G5-0xe">
+                        <rect key="frame" x="287" y="27" width="24" height="20.333333333333329"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="Brq-Ok-S61"/>
+                            <constraint firstAttribute="width" secondItem="ABU-G5-0xe" secondAttribute="height" id="jSk-6n-SXx"/>
+                            <constraint firstAttribute="height" constant="24" id="tyI-xs-UsA"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="T46-lQ-GXE" secondAttribute="bottom" constant="4" id="2xv-JI-gFO"/>
+                    <constraint firstAttribute="bottom" secondItem="ABU-G5-0xe" secondAttribute="bottom" constant="24" id="9hC-La-kAK"/>
+                    <constraint firstAttribute="trailing" secondItem="ABU-G5-0xe" secondAttribute="trailing" constant="4" id="DC5-Cx-JWg"/>
                     <constraint firstItem="DLy-NX-NFI" firstAttribute="leading" secondItem="T46-lQ-GXE" secondAttribute="trailing" constant="16" id="FcG-10-gfn"/>
                     <constraint firstItem="T46-lQ-GXE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="FnN-KP-sZr"/>
+                    <constraint firstItem="ABU-G5-0xe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="K47-59-Hox"/>
                     <constraint firstItem="DLy-NX-NFI" firstAttribute="centerY" secondItem="T46-lQ-GXE" secondAttribute="centerY" id="KVh-BU-g1e"/>
                     <constraint firstItem="DLy-NX-NFI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="W45-wx-jed"/>
                     <constraint firstAttribute="trailing" secondItem="DLy-NX-NFI" secondAttribute="trailing" constant="4" id="XLy-ti-cIA"/>
@@ -49,4 +61,7 @@
             <point key="canvasLocation" x="171.75572519083968" y="25.704225352112676"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+    </resources>
 </document>

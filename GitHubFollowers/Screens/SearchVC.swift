@@ -37,9 +37,7 @@ final class SearchVC: UIViewController {
             presentGFAlertOnMainThread(title: "Empty Username", message: "Please enter a username.We need to know who to look for.  😊", buttonTitle: "Ok")
             return
         }
-        let followersListVC = FollowersListVC()
-        followersListVC.username = usernameTextField.text
-        followersListVC.title = usernameTextField.text
+        let followersListVC = FollowersListVC(username: usernameTextField.text!)
         if let navigationController = navigationController {
             navigationController.pushViewController(followersListVC, animated: true)
         }
