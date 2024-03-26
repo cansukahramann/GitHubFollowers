@@ -14,6 +14,12 @@ enum ScreenSize {
     static let minLength  = min(ScreenSize.width, ScreenSize.height)
 }
 
+enum Images {
+    static let placeHolder    = UIImage(named: "avatar-palceholder")
+    static let ghLogo         = UIImage(named: "gh-logo")
+    static let emptyStateLogo = UIImage(named: "empty-state-logo")
+}
+
 enum DeviceType {
     static let idiom                   = UIDevice.current.userInterfaceIdiom
     static let nativeScale             = UIScreen.main.nativeScale

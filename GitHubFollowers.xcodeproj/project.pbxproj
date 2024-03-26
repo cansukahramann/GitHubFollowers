@@ -154,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				7E6C07B62BB168C600CC145F /* TabBarController */,
-				7E502D732BA62036005FB42C /* UserInfo */,
 				7EC9FD342BA041CD006CEE80 /* Labels */,
 				7EC9FD332BA041A8006CEE80 /* ViewControllers */,
 				7EC9FD322BA041A0006CEE80 /* ImageViews */,
@@ -187,13 +186,6 @@
 				7E76038F2B87746C00CFBBF8 /* LaunchScreen.storyboard */,
 			);
 			path = Support;
-			sourceTree = "<group>";
-		};
-		7E502D732BA62036005FB42C /* UserInfo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UserInfo;
 			sourceTree = "<group>";
 		};
 		7E6C07B62BB168C600CC145F /* TabBarController */ = {

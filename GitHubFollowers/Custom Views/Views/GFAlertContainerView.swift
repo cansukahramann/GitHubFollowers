@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 final class GFAlertContainerView: UIView {
     
     override init(frame: CGRect) {
