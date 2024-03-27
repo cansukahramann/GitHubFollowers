@@ -11,12 +11,7 @@ final class GFButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        
-        
-        backgroundColor = .red
-        layer.cornerRadius = 15
-        layer.borderWidth = 12
-        layer.borderColor = UIColor.black.cgColor
+        configure()
     }
     
     required init?(coder: NSCoder) {
