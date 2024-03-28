@@ -12,7 +12,7 @@ protocol FollowerListVCDelegate: AnyObject {
 }
 
 final class FollowersListVC: GFDataLoadingVC {
-
+    
     enum Section {
         case main
     }
@@ -76,7 +76,7 @@ final class FollowersListVC: GFDataLoadingVC {
             switch result {
             case .success(let user):
                 let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
-            
+                
                 PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
                     guard let self = self else { return }
                     guard let error = error else {
@@ -96,18 +96,17 @@ final class FollowersListVC: GFDataLoadingVC {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search for a username"
-//        searchController.automaticallyShowsScopen Bar = true
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
     }
     
     func getFollowers(username: String, page: Int) {
         showLoadingView()
-        isLoadingMoreFollowers = true // ???????????????????
+        isLoadingMoreFollowers = true
         NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
             guard let self = self else { return }
             self.dismissLoadingView()
-
+            
             switch result {
             case .success(let followers):
                 if followers.count < 100 { self.hasMoreFollowers = false}
@@ -118,7 +117,7 @@ final class FollowersListVC: GFDataLoadingVC {
                     DispatchQueue.main.async {
                         self.showEmptyStateView(with: message, in: self.view)
                     }
-                    return 
+                    return
                 }
                 self.updateData(followers: self.followers)
                 
@@ -142,7 +141,7 @@ final class FollowersListVC: GFDataLoadingVC {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
-        DispatchQueue.main.async { 
+        DispatchQueue.main.async {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
     }
@@ -154,7 +153,7 @@ extension FollowersListVC: UICollectionViewDelegateFlowLayout {
         let itemHeight = itemWidth * 1.28
         return CGSize(width: itemWidth, height: itemHeight)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
     }
@@ -185,7 +184,7 @@ extension FollowersListVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let activeArray = isSearching ? filteredFollowers : followers
         let follower = activeArray[indexPath.item]
-
+        
         let destVC = UserInfoVC()
         destVC.username = follower.login
         destVC.delegate = self

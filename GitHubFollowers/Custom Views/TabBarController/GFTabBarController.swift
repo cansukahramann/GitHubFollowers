@@ -8,7 +8,7 @@
 import UIKit
 
 class GFTabBarController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UITabBar.appearance().tintColor = .systemGreen
@@ -30,16 +30,4 @@ class GFTabBarController: UITabBarController {
         
         return UINavigationController(rootViewController: favoritesListVC)
     }
-//    func createTabbar() -> UITabBarController {
-//        let tabbar = UITabBarController()
-//        
-//        let appearance = UITabBarAppearance()
-//        appearance.configureWithDefaultBackground()
-//        UITabBar.appearance().standardAppearance = appearance
-//        UITabBar.appearance().scrollEdgeAppearance = appearance
-//        
-//        return tabbar
-//    }
-    
-    
 }

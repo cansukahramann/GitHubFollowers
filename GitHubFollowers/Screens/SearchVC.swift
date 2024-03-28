@@ -8,7 +8,7 @@
 import UIKit
 
 final class SearchVC: UIViewController {
-
+    
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var usernameTextField: GFTextField!
     
@@ -17,7 +17,7 @@ final class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-    
+        
         usernameTextField.delegate = self
         createDissmisKeyboardTabGesture()
     }
@@ -26,7 +26,7 @@ final class SearchVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-
+    
     func createDissmisKeyboardTabGesture() {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
@@ -51,6 +51,7 @@ final class SearchVC: UIViewController {
 extension SearchVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         pushFollowerListVC()
+        textField.text = nil
         return true
     }
 }

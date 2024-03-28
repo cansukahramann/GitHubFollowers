@@ -8,7 +8,7 @@
 import UIKit
 
 class FollowerCell: UICollectionViewCell {
-
+    
     @IBOutlet var avatarImageView: GFAvatarImageView!
     @IBOutlet var usernameLabel: GFTitleLabel!
     
@@ -16,9 +16,8 @@ class FollowerCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
     func set (follower: Follower) {
         usernameLabel.text = follower.login
         NetworkManager.shared.downloadImage(from: follower.avatarUrl) { [weak self] image in
@@ -28,5 +27,4 @@ class FollowerCell: UICollectionViewCell {
             }
         }
     }
-    
 }

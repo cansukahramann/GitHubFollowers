@@ -8,7 +8,7 @@
 import UIKit
 
 final class GFTextField: UITextField {
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -39,5 +39,4 @@ final class GFTextField: UITextField {
         returnKeyType = .go
         placeholder = "Enter a username"
     }
-
 }

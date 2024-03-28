@@ -9,7 +9,7 @@ import UIKit
 import SafariServices
 
 extension UIViewController {
-        
+    
     func  presentGFAlertOnMainThread(title: String, message: String, buttonTitle: String) {
         DispatchQueue.main.async {
             let alertVC = GFAlertVC(alertTitle: title, message: message, buttonTitle: buttonTitle)

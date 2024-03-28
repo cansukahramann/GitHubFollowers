@@ -23,7 +23,7 @@ final class UserInfoVC: GFDataLoadingVC {
     @IBOutlet var followingCountLabel: UILabel!
     @IBOutlet var followersCountLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-
+    
     var username: String!
     private var user: User!
     
@@ -42,8 +42,8 @@ final class UserInfoVC: GFDataLoadingVC {
             
             switch result {
             case .success(let user):
-                    self.user = user
-                    self.configureUIElements()
+                self.user = user
+                self.configureUIElements()
                 
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")

@@ -8,7 +8,7 @@
 import UIKit
 
 class FavoriteCell: UITableViewCell {
-
+    
     @IBOutlet var avatarImageView: GFAvatarImageView!
     @IBOutlet var usernameLabel: GFTitleLabel!
     
@@ -18,7 +18,7 @@ class FavoriteCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     func set(favorite: Follower) {
         usernameLabel.text = favorite.login
         NetworkManager.shared.downloadImage(from: favorite.avatarUrl) { [weak self] image in
@@ -31,7 +31,6 @@ class FavoriteCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
-    
 }

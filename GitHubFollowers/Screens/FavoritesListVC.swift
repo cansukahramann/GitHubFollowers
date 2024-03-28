@@ -23,11 +23,6 @@ final class FavoritesListVC: GFDataLoadingVC {
         tableView.dataSource = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        getFavorites()
-    }
-    
     func configureViewController() {
         view.backgroundColor = .systemBackground
         title = "Favorites"
@@ -35,19 +30,17 @@ final class FavoritesListVC: GFDataLoadingVC {
     }
     
     func getFavorites() {
-        PersistenceManager.retrieveFavorites { [weak self] result in
+        PersistenceManager.retrieveFavorites { [weak self] result in
             
             guard let self = self else { return }
             
             switch result {
             case .success(let favorites):
-                if favorites.isEmpty {
+                if favorites.isEmpty {
                     showEmptyStateView(with: "No favorites?\nAdd one on the follower screen.", in: self.view)
                 } else {
                     self.favorites = favorites
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
+                    self.tableView.reloadData()
                 }
                 
             case .failure(let error):
@@ -92,6 +85,4 @@ extension FavoritesListVC: UITableViewDataSource {
         cell.set(favorite: favorite)
         return cell
     }
-    
-    
 }
