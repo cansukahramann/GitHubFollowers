@@ -12,33 +12,32 @@ GitHub Followers is an iOS application that allows users to follow GitHub profil
 ## Installation 🚀
 
 Clone the repository:
-
+ 
 ```bash
-git clone https://github.com/your_username/GitHubFollowers.git
-Navigate to the project directory:
+https://github.com/your_username/GitHubFollowers.git
 ```
-
+Navigate to the project directory:
 ```bash
 cd GitHubFollowers
-Install the necessary dependencies and open the project in Xcode:
 ```
+Install the necessary dependencies and open the project in Xcode:
 ```bash
 open GitHubFollowers.xcodeproj
 ```
 ## Usage 📲
 
-Run the application.
-Enter a GitHub username on the main screen and click the "Search" button.
-Select a user from the results list to view follower information.
+- Run the application.
+- Enter a GitHub username on the main screen and click the "Search" button.
+- Select a user from the results list to view follower information.
 
 ## Contributing 🤝
 
-If you want to contribute, please follow these steps:
-Fork the project.
-Create a new branch: git checkout -b feature/new-feature.
-Commit your changes: git commit -m 'Add a new feature'.
-Push to the branch: git push origin feature/new-feature.
-Open a Pull Request.
+- If you want to contribute, please follow these steps:
+- Fork the project.
+- Create a new branch: git checkout -b feature/new-feature.
+- Commit your changes: git commit -m 'Add a new feature'.
+- Push to the branch: git push origin feature/new-feature.
+- Open a Pull Request.
 
 ## License 📄
 
