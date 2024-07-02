@@ -16,14 +16,15 @@ Clone the repository:
 ```bash
 git clone https://github.com/your_username/GitHubFollowers.git
 Navigate to the project directory:
+```
 
 ```bash
 cd GitHubFollowers
 Install the necessary dependencies and open the project in Xcode:
-
+```
 ```bash
 open GitHubFollowers.xcodeproj
-
+```
 ## Usage 📲
 
 Run the application.
